@@ -1,24 +1,54 @@
 import React from "react"
-import { Link } from "gatsby"
-
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import product from "../components/product"
-
-console.log(data);
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
-
-export default IndexPage
+export default ({ data }) => {
+  console.log(data)
+return (
+    <Layout>
+      <div>
+        <h1>My Products</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Image</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.allBigCommerceNode.edges.map(({ node }, index) => (
+              <tr key={index}>
+                <td>{node.name}</td>
+                <td><div dangerouslySetInnerHTML={{__html: node.description}}></div></td>
+<td>
+                {node.images.map(({url_thumbnail}, index) =>(
+                    <img key={index} src={url_thumbnail}/>
+                    ))}
+                </td>
+                
+                <td>{node.price.toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Layout>
+  )
+}
+export const query = graphql`
+query {
+    allBigCommerceNode {
+      edges {
+        node {
+          images {
+            url_thumbnail
+          }
+          description
+          name
+          price
+        }
+      }
+    }
+  }
+`
