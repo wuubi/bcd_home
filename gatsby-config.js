@@ -30,8 +30,8 @@ module.exports = {
 	{
 	resolve: 'gatsby-source-bigcommerce',
 	options: {
-		accessToken: process.env.hzas68y21msosgq00v9gjf5fcrhszua,
-		storeHash: process.env.bq4uczryb8,
+		accessToken: hzas68y21msosgq00v9gjf5fcrhszua,
+		storeHash: bq4uczryb8,
 		endpoint: '/catalog/products',
 
 	logLevel: 'info',
