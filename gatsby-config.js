@@ -27,7 +27,7 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
-	{
+	
 	resolve: 'gatsby-source-bigcommerce',
 	options: {
 	    	clientId: 'rsbi1lm001ylbp7zcr1p7nmkqjqezw5',
@@ -39,7 +39,7 @@ module.exports = {
 	logLevel: 'info',
 	nodeName: 'BigCommerceNode'
 	}
-	}
+	
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
