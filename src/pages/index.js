@@ -6,6 +6,8 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import product from "../components/product"
 
+console.log(data);
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
