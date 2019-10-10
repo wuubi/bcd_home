@@ -25,7 +25,7 @@ exports.createPages = async ({ actions, graphql }) => {
   data.allBigCommerce.edges.node.forEach(({ id, name }) => {
     actions.createPage({
       path: name,
-      component: path.resolve(`./product.js`),
+      component: path.resolve(`./src/components/product.js`),
       context: {
         productId: id,
       },
