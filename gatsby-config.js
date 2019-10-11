@@ -34,7 +34,10 @@ module.exports = {
 	    	clientSecret: '276f648e97cbed52360e2176b5dff2a3d609764b4f3515d99769fd6466407e2f',
 		accessToken: 'hzas68y21msosgq00v9gjf5fcrhszua',
 		storeHash: 'bq4uczryb8',
-		endpoint: '/catalog/products',
+		endpoints: {
+          BigCommerceProducts: "/catalog/products?include=images",
+          BigCommerceCategories: "/catalog/categories",
+        },
 
 	logLevel: 'info',
 	nodeName: 'BigCommerceNode'
